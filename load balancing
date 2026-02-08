@@ -1,0 +1,479 @@
+. Round Robin
+How it works
+
+Requests are distributed sequentially:
+
+Request 1 → Server A
+Request 2 → Server B
+Request 3 → Server C
+Request 4 → Server A
+
+Where it fits
+
+Backends are identical
+
+Requests are similar in cost
+
+Stateless services
+
+Pros
+
+Simple
+
+Low overhead
+
+Predictable
+
+Cons (hard truth)
+
+Ignores server load
+
+One slow server degrades overall latency
+
+Used in
+
+NGINX (default)
+
+Kubernetes Service (kube-proxy iptables mode ≈ round-robin)
+
+2. Weighted Round Robin
+How it works
+
+Servers get traffic proportional to weight:
+
+A (weight 3), B (weight 1)
+→ A, A, A, B
+
+Where it fits
+
+Unequal server capacity
+
+Gradual traffic shift (basic canary)
+
+Pros
+
+Simple capacity awareness
+
+Easy rollout control
+
+Cons
+
+Static weights (no real-time adaptation)
+
+Used in
+
+NGINX
+
+Cloud LBs
+
+Ingress controllers
+
+3. Least Connections
+How it works
+
+Request goes to the server with the fewest active connections.
+
+Where it fits
+
+Long-lived connections
+
+Uneven request duration
+
+Pros
+
+Better latency under mixed workloads
+
+Adapts dynamically
+
+Cons
+
+Connection count ≠ CPU usage
+
+Slightly higher overhead
+
+Used in
+
+NGINX
+
+HAProxy
+
+L4/L7 load balancers
+
+4. Weighted Least Connections
+How it works
+
+Least connections adjusted by server capacity.
+
+Where it fits
+
+Mixed instance sizes
+
+High concurrency systems
+
+Pros
+
+More accurate than plain least-conn
+
+Cons
+
+Still blind to actual CPU/memory
+
+5. Least Response Time (Latency-based)
+How it works
+
+Routes to backend with:
+
+lowest (response_time + active_connections)
+
+Where it fits
+
+Performance-critical APIs
+
+User-facing systems
+
+Pros
+
+Optimizes real user experience
+
+Cons
+
+Requires continuous measurement
+
+Can oscillate under unstable backends
+
+Used in
+
+Advanced proxies
+
+Service meshes
+
+6. Random
+How it works
+
+Pick a backend at random.
+
+Why it exists
+
+Surprisingly effective at scale.
+
+Pros
+
+Extremely cheap
+
+Avoids synchronization bias
+
+Cons
+
+Not deterministic
+
+Needs many backends to average out
+
+Used in
+
+High-scale systems
+
+Sometimes combined with “power of two choices”
+
+7. Hash-based (Consistent Hashing)
+How it works
+
+A hash of a key determines backend:
+
+hash(user_id) → Server X
+
+Where it fits
+
+Session stickiness
+
+Caching systems
+
+Stateful workloads
+
+Pros
+
+Same client → same backend
+
+Minimal rebalancing on scale changes
+
+Cons
+
+Uneven load if key distribution is skewed
+
+Used in
+
+NGINX (hash)
+
+Service meshes
+
+Distributed caches
+
+8. IP Hash
+How it works
+
+Client IP decides backend.
+
+Where it fits
+
+Legacy session stickiness
+
+No cookies allowed
+
+Pros
+
+Simple stickiness
+
+Cons (brutal truth)
+
+Breaks with NAT, proxies, mobile clients
+
+Very uneven in real traffic
+
+9. Power of Two Choices (advanced, underrated)
+How it works
+
+Randomly pick two servers
+
+Choose the one with less load
+
+Why it’s powerful
+
+Near-optimal load distribution
+
+Very low overhead
+
+Used in
+
+Large-scale distributed systems
+
+Some modern load balancers internally
+
+10. Queue-based / Adaptive (smart LBs)
+How it works
+
+Routes based on:
+
+Queue depth
+
+CPU usage
+
+Latency
+
+Error rate
+
+Where it fits
+
+Mission-critical systems
+
+Highly variable workloads
+
+Pros
+
+Best real-world performance
+
+Cons
+
+Complex
+
+Higher cost
+
+Needs observability
+
+Used in
+
+Service meshes
+
+Custom L7 gateways
+
+Kubernetes-specific reality (important)
+Kubernetes Service (default)
+
+iptables mode → probabilistic round-robin
+
+IPVS mode → supports:
+
+Round robin
+
+Least connections
+
+Source hashing
+
+Ingress / L7
+
+Algorithm depends on controller (NGINX, Envoy, etc.)
+
+Supports:
+
+Weighted routing
+
+Canary
+
+Sticky sessions
+
+Service Mesh
+
+Latency-aware
+
+Retry-aware
+
+Circuit-breaker integrated
+
+Algorithm selection (tell-it-like-it-is)
+Scenario	Correct Choice
+Simple stateless APIs	Round Robin
+Unequal server sizes	Weighted RR
+Long-lived connections	Least Connections
+User-facing latency	Least Response Time
+Sessions / cache	Consistent Hash
+Massive scale	Random / Power of Two
+Mission-critical	Adaptive / Mesh
+Cost & speed impact
+
+Simple algorithms = cheaper, faster
+
+Smart algorithms = better UX, higher cost
+
+Wrong algorithm = hidden latency + wasted infra
+
+Final hard truths
+
+Load balancing ≠ just distributing traffic
+
+Algorithms matter more than instance count
+
+Kubernetes alone gives basic balancing
+
+Advanced behavior needs Ingress or Mesh
+
+Senior engineers choose simplicity first, intelligence only when needed
+
+If you want next:
+
+Interview questions (10+ years) on load balancing
+
+Which algorithm Kubernetes actually uses internally
+
+Design a load-balancing strategy for your IoT / API workload
+
+Give me interview questions (10+ years) on load balancing
+
+Below are only interview questions (no answers), designed for a 10+ years / Architect / Principal-level candidate on Load Balancing. These questions test real production judgment, not textbook recall.
+
+Core Concepts
+
+What problems does load balancing solve beyond traffic distribution?
+
+Why is round-robin often “good enough” in many production systems?
+
+When does load balancing actually increase latency?
+
+How does load balancing differ at L4 vs L7?
+
+What signals should a load balancer never rely on?
+
+Algorithms & Trade-offs
+
+Compare round-robin, least connections, and latency-based routing—when does each fail?
+
+Why is connection count a poor proxy for real load in modern systems?
+
+What are the weaknesses of IP-hash–based load balancing?
+
+How does consistent hashing minimize disruption during scale events?
+
+Why is “power of two choices” effective at large scale?
+
+Health Checks & Failures
+
+What happens if health checks are too aggressive?
+
+How do false positives in health checks impact availability?
+
+Why are application-level health checks preferred over TCP checks?
+
+How should a load balancer behave when all backends are unhealthy?
+
+What is the correct fail-open vs fail-closed behavior, and when?
+
+Kubernetes-Specific
+
+How does kube-proxy perform load balancing in iptables mode?
+
+What differences does IPVS bring compared to iptables?
+
+Why can Kubernetes Services not do weighted routing?
+
+How does endpoint churn affect load balancing stability?
+
+What breaks if readiness probes are misconfigured?
+
+Traffic Patterns & Performance
+
+How do long-lived connections affect load balancing decisions?
+
+Why can HTTP/2 or gRPC break naïve load balancing assumptions?
+
+How does connection pooling on the client side skew load distribution?
+
+What happens when backends have uneven response times?
+
+How do retries interact with load balancing?
+
+Session Affinity & State
+
+When is session stickiness justified?
+
+Why is stickiness usually an anti-pattern?
+
+How does cookie-based affinity differ from IP-based affinity?
+
+What problems arise when sticky sessions meet autoscaling?
+
+How do you remove state dependency without breaking users?
+
+Scaling & Resilience
+
+How does autoscaling affect load balancing correctness?
+
+Why can adding more backends sometimes reduce throughput?
+
+How do you design load balancing for sudden traffic spikes?
+
+What role does backpressure play in load-balanced systems?
+
+How do circuit breakers complement load balancing?
+
+Observability & Debugging
+
+What metrics matter most when validating a load balancer?
+
+How do you detect uneven load distribution?
+
+How do you debug intermittent 502/504 errors behind a load balancer?
+
+What logs should a load balancer always emit?
+
+How do you correlate user-side latency with backend behavior?
+
+Architecture Judgment
+
+When is a cloud-managed load balancer insufficient?
+
+When is a service mesh overkill?
+
+How do you choose between centralized vs distributed load balancing?
+
+What are the cost trade-offs of smarter routing algorithms?
+
+How do you design for graceful degradation under overload?
+
+Failure Scenarios & Edge Cases
+
+How can retries amplify failures in a load-balanced system?
+
+What happens during partial network partitions?
+
+How do you prevent cascading failures across tiers?
+
+How should load balancers behave during rolling deployments?
+
+What load-balancing mistake have you seen cause a real outage?

@@ -1,0 +1,722 @@
+🔹 High-Scale API Design
+
+Design an API that handles 1 million requests per minute.
+
+Design a multi-region API with 99.99% availability.
+
+Design a low-latency (<100ms p95) global read-heavy API.
+
+Design a write-heavy ingestion API (IoT/event stream).
+
+Design an API that must scale from 0 to 100k RPS within seconds.
+
+🔹 Reliability & Fault Tolerance
+
+Design an API that must continue working even if one region fails.
+
+How would you design graceful degradation in an API?
+
+How do you prevent cascading failures in distributed APIs?
+
+Design a retry-safe idempotent API.
+
+How would you handle partial failures in distributed transactions?
+
+🔹 Data Modeling & Storage
+
+Design an API backed by a NoSQL database handling high throughput.
+
+Design an API backed by SQL with strict consistency.
+
+How would you prevent hot partitions in a distributed database?
+
+Design an API supporting real-time analytics + transactional queries.
+
+How do you design schema for evolving APIs without breaking clients?
+
+🔹 Performance Optimization
+
+How would you reduce API latency under heavy load?
+
+Design a caching strategy for a large-scale read API.
+
+When would you use CDN vs in-memory cache vs DB cache?
+
+How do you measure and improve p99 latency?
+
+How would you profile and remove bottlenecks in a high-traffic API?
+
+🔹 Security & Governance
+
+Design a secure public API exposed to the internet.
+
+How would you implement rate limiting at scale?
+
+How would you protect against DDoS and abuse?
+
+Design a multi-tenant API with strict tenant isolation.
+
+How would you implement fine-grained authorization (RBAC/ABAC)?
+
+🔹 Concurrency & Consistency
+
+How do you design an API that supports optimistic concurrency control?
+
+How do you prevent double writes in distributed systems?
+
+Design an API that must guarantee exactly-once processing.
+
+When do you choose strong consistency vs eventual consistency?
+
+How would you implement distributed locking for an API?
+
+🔹 Observability & Operations
+
+What metrics define a healthy API?
+
+How do you design logging and tracing for large-scale APIs?
+
+How would you detect and respond to performance degradation?
+
+How do you design for zero-downtime deployments?
+
+How would you design API versioning for backward compatibility?
+
+🔹 Cost & Trade-offs (Very Senior Level)
+
+How do you design a high-scale API while minimizing cloud cost?
+
+When would you choose serverless vs containers?
+
+How do you estimate infrastructure capacity for a new API?
+
+What are the cost implications of strong consistency?
+
+How would you redesign an expensive API to reduce cost by 40%?
+
+🔹 Advanced Distributed Systems
+
+Design an API that supports real-time notifications (WebSockets/streams).
+
+Design an API for global event ordering.
+
+How would you handle clock skew in distributed APIs?
+
+Design an API system with event sourcing architecture.
+
+How do you implement CQRS for API scalability?
+
+🔹 Coding-Oriented System Questions
+
+Implement a token bucket rate limiter.
+
+Implement idempotency-key handling logic.
+
+Write pseudo-code for retry with exponential backoff.
+
+1️⃣ “Our API is currently handling 5k RPS. Tomorrow marketing expects 500k RPS. What do you do?”
+
+Follow-ups:
+
+Where will it break first?
+
+How do you estimate capacity?
+
+How do you validate before go-live?
+
+How do you avoid database meltdown?
+
+2️⃣ “We have a Payment API. Occasionally customers are charged twice. Fix the design.”
+
+Follow-ups:
+
+What guarantees do you provide?
+
+How do you handle retries?
+
+What happens if DB write succeeds but response fails?
+
+3️⃣ “Design a public API exposed to third-party developers.”
+
+Follow-ups:
+
+How do you enforce quotas?
+
+How do you prevent abuse?
+
+How do you version it?
+
+How do you deprecate safely?
+
+4️⃣ “Your API p99 latency suddenly jumped from 120ms to 2 seconds. What is your investigation plan?”
+
+Follow-ups:
+
+What metrics do you check first?
+
+How do you identify whether it’s compute or DB?
+
+What tooling do you use?
+
+5️⃣ “Design an API for IoT ingestion — 5 million devices sending data every minute.”
+
+Follow-ups:
+
+How do you handle burst traffic?
+
+What if 1% devices go rogue?
+
+How do you avoid hot partitions?
+
+Design and code a sliding window counter.
+
+Implement optimistic locking using version numbers.
+7️⃣ “Our API works fine in staging, but in production during peak sale it crashes. Why?”
+
+Follow-ups:
+
+What assumptions likely failed?
+
+How do you load test realistically?
+
+What usually breaks first?
+
+How do you protect downstream systems?
+
+8️⃣ “We need to reduce API cost by 40% without reducing performance. What do you change?”
+
+Follow-ups:
+
+What are biggest cost drivers?
+
+How do you identify waste?
+
+Would you redesign storage?
+
+Would you change consistency model?
+
+9️⃣ “A single customer is consuming 70% of API capacity. What do you do?”
+
+Follow-ups:
+
+Rate limit?
+
+Tiered pricing?
+
+Isolation per tenant?
+
+Dedicated infrastructure?
+
+🔟 “Design an API where writes must never be lost, even if the region crashes.”
+
+Follow-ups:
+
+RPO and RTO?
+
+Sync vs async replication?
+
+Multi-region active-active?
+
+Conflict resolution strategy?
+
+1️⃣1️⃣ “Design an API for real-time leaderboard updates during a live sports match.”
+
+Follow-ups:
+
+Read-heavy or write-heavy?
+
+Caching strategy?
+
+How do you push updates to clients?
+
+How do you maintain order consistency?
+
+1️⃣2️⃣ “We need strict ordering of events across distributed services. How do you design the API?”
+
+Follow-ups:
+
+Global ordering vs partitioned ordering?
+
+How do you handle clock skew?
+
+Would you use Kafka?
+
+What are throughput trade-offs?
+
+1️⃣3️⃣ “Design an API that supports 10,000 tenants with strict data isolation.”
+
+Follow-ups:
+
+Shared DB or per-tenant DB?
+
+How do you avoid noisy neighbor?
+
+How do you handle schema evolution?
+
+1️⃣4️⃣ “Our API sometimes returns stale data. Business says it’s unacceptable. Fix it.”
+
+Follow-ups:
+
+Is eventual consistency acceptable?
+
+Cache invalidation strategy?
+
+Strong consistency cost impact?
+
+1️⃣5️⃣ “Design a notification API that must deliver messages in under 1 second globally.”
+
+Follow-ups:
+
+WebSockets vs polling?
+
+Edge distribution?
+
+Message broker choice?
+
+Backpressure handling?
+
+1️⃣6️⃣ “You deployed a new API version. Suddenly error rate spikes. What’s your rollback strategy?”
+
+Follow-ups:
+
+Blue-green vs canary?
+
+Feature flags?
+
+Database backward compatibility?
+
+1️⃣7️⃣ “Design an API that handles flash sales (100x traffic spike in 10 seconds).”
+
+Follow-ups:
+
+Pre-warming?
+
+Queue buffering?
+
+Inventory locking?
+
+Thundering herd prevention?
+
+1️⃣8️⃣ “Design a globally distributed search API.”
+
+Follow-ups:
+
+Index replication?
+
+Query fan-out?
+
+Read consistency?
+
+Cost implications?
+
+1️⃣9️⃣ “Your API depends on 3 downstream services. One is slow. What do you do?”
+
+Follow-ups:
+
+Circuit breaker?
+
+Timeout strategy?
+
+Fallback?
+
+Bulkhead isolation?
+
+2️⃣0️⃣ “Design an API that supports real-time analytics dashboards.”
+
+Follow-ups:
+
+OLTP vs OLAP separation?
+
+CQRS?
+
+Pre-aggregation?
+
+Streaming vs batch?
+
+2️⃣1️⃣ “Design an API where data privacy laws require regional data residency.”
+
+Follow-ups:
+
+Geo-fencing?
+
+Multi-region routing?
+
+Cross-region data sync restrictions?
+
+2️⃣2️⃣ “How would you design API versioning for a platform used by 100+ partner teams?”
+
+Follow-ups:
+
+URI vs header versioning?
+
+Deprecation timeline?
+
+Contract testing?
+
+Backward compatibility enforcement?
+
+2️⃣3️⃣ “Design an API that guarantees exactly-once processing.”
+
+Follow-ups:
+
+Is it even possible?
+
+Idempotency keys?
+
+At-least-once with dedup?
+
+Trade-offs?
+
+2️⃣4️⃣ “Your API handles financial data. Audit requires traceability of every change.”
+
+Follow-ups:
+
+Event sourcing?
+
+Immutable logs?
+
+CDC?
+
+Performance impact?
+
+2️⃣5️⃣ “Design an API that must support 10-year data retention and petabyte scale.”
+
+Follow-ups:
+
+Cold storage strategy?
+
+Tiered storage?
+
+Partitioning?
+
+Query cost?
+
+🔥 Extremely Senior-Level Trick Questions
+
+These test depth.
+
+2️⃣6️⃣ “What will break first if traffic increases 100x?”
+
+They want:
+
+Connection pool exhaustion
+
+DB hotspots
+
+Thread starvation
+
+GC pauses
+
+Network saturation
+
+2️⃣7️⃣ “If I remove cache, what happens?”
+
+They want:
+
+DB amplification
+
+Latency spikes
+
+Cascading failures
+
+2️⃣8️⃣ “If your partition key is poorly designed, how do you fix it in production?”
+
+They want:
+
+Dual-write migration
+
+Backfill strategy
+
+Traffic shifting
+
+Data copy pipeline
+
+2️⃣9️⃣ “How do you design an API to survive DDoS?”
+
+They want:
+
+WAF
+
+Rate limiting
+
+IP reputation
+
+Autoscaling limits
+
+Circuit breaking
+
+3️⃣0️⃣ “How do you know your API can actually handle 1M RPS?”
+
+They want:
+
+Load testing plan
+
+Synthetic traffic
+
+Chaos engineering
+
+Capacity modeling
+
+Monitoring thresholds
+
+1️⃣ “Your API is fine at 10k RPS. At 30k RPS latency explodes. What failed?”
+
+Follow-ups:
+
+What do you check first?
+
+How do you isolate compute vs DB vs network?
+
+What metrics prove your hypothesis?
+
+What’s your immediate mitigation?
+
+2️⃣ “Black Friday is tomorrow. Traffic may be 20x. You have 24 hours. What do you do?”
+
+Follow-ups:
+
+What do you scale first?
+
+What do you disable?
+
+What do you cache aggressively?
+
+What business features can be temporarily degraded?
+
+3️⃣ “A single endpoint causes 80% of DB load. How do you redesign it?”
+
+Follow-ups:
+
+Pre-compute?
+
+Cache?
+
+Denormalize?
+
+Event-driven update?
+
+CQRS?
+
+4️⃣ “We need sub-50ms p95 globally. Users are worldwide. Design it.”
+
+Follow-ups:
+
+Multi-region active-active?
+
+Data replication strategy?
+
+Conflict resolution?
+
+Edge compute?
+
+Cost implications?
+
+5️⃣ “A client retries aggressively on timeout. Now your system is melting.”
+
+Follow-ups:
+
+How do you implement backpressure?
+
+Where do you enforce retry budgets?
+
+Do you fail fast?
+
+Do you use circuit breakers?
+
+6️⃣ “You must design an API where writes can never be lost. Ever.”
+
+Follow-ups:
+
+What does ‘never’ mean? RPO?
+
+Sync replication vs async?
+
+Multi-region quorum?
+
+What’s the performance trade-off?
+
+7️⃣ “Your API must support 100k tenants. Some are huge enterprises.”
+
+Follow-ups:
+
+Shared DB or isolated?
+
+Per-tenant rate limiting?
+
+Noisy neighbor protection?
+
+Schema management strategy?
+
+8️⃣ “How do you design an API that supports zero-downtime schema evolution?”
+
+Follow-ups:
+
+Backward-compatible contracts?
+
+Expand-and-contract pattern?
+
+Dual writes?
+
+Data migration without blocking traffic?
+
+9️⃣ “Your database is the bottleneck. You cannot scale it vertically anymore.”
+
+Follow-ups:
+
+Sharding?
+
+Read replicas?
+
+Caching?
+
+Async processing?
+
+Partitioning strategy?
+
+🔟 “Design an API that guarantees strict ordering of events.”
+
+Follow-ups:
+
+Global vs partition ordering?
+
+Throughput trade-off?
+
+Clock skew?
+
+Message broker selection?
+
+1️⃣1️⃣ “How would you redesign a synchronous API into an event-driven system?”
+
+Follow-ups:
+
+What moves to async?
+
+How do clients get result?
+
+Polling vs callback vs WebSocket?
+
+Failure handling?
+
+1️⃣2️⃣ “Your p99 latency is terrible but p50 is fine. Why?”
+
+Follow-ups:
+
+GC pauses?
+
+Cold starts?
+
+Lock contention?
+
+Hot partitions?
+
+Long-tail queries?
+
+1️⃣3️⃣ “We want to expose this API publicly. What changes?”
+
+Follow-ups:
+
+Auth?
+
+Rate limiting?
+
+DDoS mitigation?
+
+WAF?
+
+API keys vs OAuth?
+
+1️⃣4️⃣ “Design a high-frequency trading API.”
+
+Follow-ups:
+
+Latency target?
+
+In-memory processing?
+
+Strong consistency?
+
+Colocation?
+
+Network stack tuning?
+
+1️⃣5️⃣ “Your cache and DB are inconsistent. Customers see wrong data.”
+
+Follow-ups:
+
+Write-through vs write-behind?
+
+Cache invalidation?
+
+Event-driven invalidation?
+
+TTL trade-offs?
+
+1️⃣6️⃣ “A deployment caused 5% error spike. How do you respond?”
+
+Follow-ups:
+
+Canary?
+
+Feature flags?
+
+Rollback strategy?
+
+Blast radius containment?
+
+1️⃣7️⃣ “How do you design an API that scales from 0 traffic to viral overnight?”
+
+Follow-ups:
+
+Autoscaling limits?
+
+Cold start mitigation?
+
+Queue buffering?
+
+Capacity reservation?
+
+1️⃣8️⃣ “How do you protect downstream dependencies from overload?”
+
+Follow-ups:
+
+Circuit breakers?
+
+Bulkheads?
+
+Timeout strategy?
+
+Adaptive throttling?
+
+1️⃣9️⃣ “Design a real-time collaborative editing API.”
+
+Follow-ups:
+
+Conflict resolution?
+
+Operational transform vs CRDT?
+
+Event ordering?
+
+WebSocket scaling?
+
+2️⃣0️⃣ “How would you prove your design handles 1M RPS before production?”
+
+Follow-ups:
+
+Load testing strategy?
+
+Synthetic traffic?
+
+Chaos testing?
+
+What metrics define success?
+
+🔥 Now Let Me Push You Harder
+
+These are the uncomfortable ones.
+
+2️⃣1️⃣ “If your partition key is wrong, how do you fix it without downtime?”
+2️⃣2️⃣ “If you remove caching entirely, what breaks first?”
+2️⃣3️⃣ “If your API returns 200 OK but downstream write failed, what’s your strategy?”
+2️⃣4️⃣ “What is the first metric you check in any API outage?”
+2️⃣5️⃣ “What trade-offs would you accept to cut infra cost by 50%?”

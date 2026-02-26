@@ -1,0 +1,265 @@
+🔵 Conceptual Depth
+
+Explain SOLID in one sentence each without using textbook definitions.
+
+Which SOLID principle is most frequently misunderstood in enterprise systems and why?
+
+How do SOLID principles relate to cohesion and coupling?
+
+Can SOLID conflict with simplicity? Provide examples.
+
+When should SOLID not be strictly followed?
+
+🔵 Single Responsibility (SRP)
+
+How do you detect SRP violations in a legacy codebase?
+
+How do you use commit history to identify responsibility boundaries?
+
+In microservices architecture, is SRP applied at class level or service level?
+
+How would you refactor a 2000-line service class without breaking production?
+
+How do you balance SRP with performance-sensitive code?
+
+Can SRP increase number of classes unnecessarily?
+
+In a distributed IoT system, how would SRP influence service decomposition?
+
+How does SRP reduce regression risk?
+
+When does splitting responsibilities increase operational overhead?
+
+How do you prevent “micro-class explosion” while following SRP?
+
+🔵 Open / Closed Principle (OCP)
+
+How would you design a rule engine that supports dynamic extension at runtime?
+
+How does OCP influence plugin-based architectures?
+
+When does OCP introduce over-abstraction?
+
+How does OCP reduce production risk in SaaS platforms?
+
+How would you apply OCP in a pricing engine that changes frequently?
+
+How do feature flags relate to OCP?
+
+In what situations is modifying existing code safer than extending it?
+
+How does OCP interact with versioned APIs?
+
+How would you ensure backward compatibility while extending functionality?
+
+How does OCP influence SDK design?
+
+🔵 Liskov Substitution (LSP)
+
+What real-world bugs have you seen caused by LSP violations?
+
+How do strengthened preconditions break LSP?
+
+How do relaxed postconditions break LSP?
+
+How do you enforce behavioral contracts across teams?
+
+How can unit tests help detect LSP violations?
+
+How do data format mismatches (Celsius vs Fahrenheit) relate to LSP?
+
+How does LSP affect storage abstraction (Mongo vs Dynamo)?
+
+How does LSP relate to API backward compatibility?
+
+How do runtime exceptions violate substitutability?
+
+How do you document behavioral contracts clearly?
+
+🔵 Interface Segregation (ISP)
+
+How do large interfaces increase technical debt?
+
+How does ISP improve microservice boundary clarity?
+
+How would you refactor a “God Interface” in a production system?
+
+When is ISP unnecessary?
+
+How does ISP improve test isolation?
+
+How does ISP reduce ripple effect during changes?
+
+How does ISP influence SDK design for external customers?
+
+How do you apply ISP in event-driven architectures?
+
+How does ISP improve cloud function modularity?
+
+How can ISP reduce CI pipeline execution time?
+
+🔵 Dependency Inversion (DIP)
+
+Why is DIP critical in multi-cloud systems?
+
+How does DIP reduce vendor lock-in?
+
+How does DIP improve testability?
+
+What is the difference between DI container usage and true DIP?
+
+How would you refactor tightly coupled AWS-dependent code?
+
+How does DIP affect infrastructure migration strategies?
+
+How does DIP influence hexagonal architecture?
+
+How does DIP help in domain-driven design?
+
+What are risks of excessive abstraction?
+
+How does DIP affect performance in high-throughput systems?
+
+🔵 Cloud / IoT Context
+
+How would you design a cloud-agnostic IoT alert publishing system?
+
+How does SOLID help in supporting AWS and GCP simultaneously?
+
+How do you apply DIP when switching message brokers?
+
+How does LSP apply to firmware version differences?
+
+How would you design extensible telemetry processing?
+
+How does OCP help with customer-specific rule customization?
+
+How does SRP help with scaling IoT ingestion pipelines?
+
+How does ISP improve device capability modeling?
+
+How would SOLID influence event schema evolution?
+
+How does SOLID reduce cloud migration risk?
+
+🔵 Testing & Quality
+
+Which SOLID principle most improves unit testing?
+
+How do mocks relate to DIP?
+
+How can SOLID reduce flaky integration tests?
+
+How does LSP relate to contract testing?
+
+How does SRP improve code coverage quality?
+
+How does ISP reduce test setup complexity?
+
+How does OCP support A/B testing?
+
+How do SOLID principles reduce regression bugs?
+
+How would you enforce SOLID through code review?
+
+How do you measure SOLID compliance?
+
+🔵 Performance & Scalability
+
+Does applying SOLID affect runtime performance?
+
+When does abstraction impact throughput?
+
+How do you balance abstraction with hot-path optimization?
+
+How do SOLID principles help horizontal scaling?
+
+How does SRP help performance profiling?
+
+How does DIP influence caching strategies?
+
+How does OCP help scaling feature rollout?
+
+How does ISP reduce unnecessary dependencies?
+
+How does LSP affect distributed consistency?
+
+How do you avoid abstraction overhead in real-time systems?
+
+🔵 Architecture & Design Patterns
+
+How do SOLID principles relate to Clean Architecture?
+
+How do they map to Hexagonal Architecture?
+
+How does Strategy pattern relate to OCP?
+
+How does Factory pattern support DIP?
+
+How does Adapter pattern help multi-cloud design?
+
+How does Decorator pattern relate to OCP?
+
+How does Template Method relate to LSP?
+
+How do SOLID principles support Domain-Driven Design?
+
+How do SOLID principles influence API gateway design?
+
+How do SOLID principles help event-driven microservices?
+
+🔵 Leadership & Governance
+
+How would you enforce SOLID across a 30-engineer team?
+
+How do you prevent over-engineering while applying SOLID?
+
+How do you train junior engineers on SOLID?
+
+When should deadlines override strict SOLID adherence?
+
+How do you evaluate SOLID compliance in architectural reviews?
+
+How do you refactor legacy systems toward SOLID gradually?
+
+How do you convince stakeholders to invest in SOLID refactoring?
+
+How do you quantify ROI of SOLID architecture?
+
+How do you balance business pressure vs technical quality?
+
+How do you manage technical debt caused by ignoring SOLID?
+
+🔵 Failure & Risk Analysis
+
+What production incidents can arise from violating SRP?
+
+How can violating OCP slow feature delivery?
+
+How can LSP violations cause hidden runtime failures?
+
+How can ISP violations create hidden coupling?
+
+How can ignoring DIP cause cloud vendor lock-in?
+
+How do SOLID violations increase deployment risk?
+
+How do they increase rollback frequency?
+
+How do they increase regression testing cost?
+
+How do they impact mean time to recovery (MTTR)?
+
+How do they affect long-term maintainability?
+
+🔵 Advanced Thought Questions
+
+Can a system follow SOLID at class level but fail architecturally?
+
+Can microservices violate SOLID?
+
+How do SOLID principles apply in serverless architecture?
+
+How do they apply in data engineering pipelines?
+
+Are SOLID principles still relevant in AI/ML systems?

@@ -1,0 +1,533 @@
+Computer Science Fundamentals
+
+You must deeply understand:
+
+Data Structures
+
+Arrays
+
+Linked lists
+
+Stack / Queue
+
+Hashing
+
+Trees (BST, AVL, B-Trees)
+
+Heaps
+
+Tries
+
+Graphs
+
+Algorithms
+
+Sorting (Quick, Merge, Heap)
+
+Searching
+
+Recursion
+
+Dynamic Programming
+
+Greedy algorithms
+
+Graph traversal (DFS, BFS)
+
+Dijkstra
+
+Topological sort
+
+Time & Space Complexity
+
+Big-O
+
+Amortized analysis
+
+Tradeoffs between CPU and memory
+
+Senior engineers optimize decisions based on complexity.
+
+Phase 1 – Networking & OS Deep Knowledge
+2. Networking (Very Important for HLD)
+
+OSI model
+
+TCP vs UDP
+
+3-way handshake
+
+TLS handshake
+
+HTTP/1.1 vs HTTP/2 vs HTTP/3
+
+REST vs gRPC
+
+WebSockets
+
+DNS resolution
+
+Reverse proxy
+
+Load balancers (L4 vs L7)
+
+CDN working
+
+NAT
+
+VPC routing
+
+Subnetting basics
+
+Public vs private IP
+
+CIDR
+
+3. Operating System Concepts
+
+Process vs thread
+
+Context switching
+
+Memory management
+
+Virtual memory
+
+Paging
+
+Deadlocks
+
+Mutex / Semaphore
+
+File system basics
+
+I/O blocking vs non-blocking
+
+Epoll / async models
+
+Phase 2 – Backend Engineering Depth
+4. API Design
+
+RESTful conventions
+
+Idempotency
+
+API versioning
+
+Pagination strategies
+
+Rate limiting
+
+Authentication (JWT, OAuth2)
+
+Authorization (RBAC, ABAC)
+
+HATEOAS (basic understanding)
+
+API Gateway patterns
+
+5. Database Architecture (Deep Level)
+SQL
+
+Index design
+
+Composite indexes
+
+Covering indexes
+
+Execution plan reading
+
+Locking
+
+Isolation levels
+
+ACID
+
+Sharding
+
+Replication
+
+NoSQL
+
+Document modeling
+
+Partition keys
+
+Secondary indexes
+
+Hot partitions
+
+Eventual consistency
+
+TTL usage
+
+Special Topics
+
+Data migration
+
+Backward compatibility
+
+Zero-downtime migration
+
+Schema versioning
+
+Phase 3 – Distributed Systems
+6. Core Concepts
+
+CAP theorem
+
+Consistency models
+
+Leader election
+
+Consensus (Raft basics)
+
+Quorum
+
+Event sourcing
+
+CQRS
+
+Saga pattern
+
+Circuit breaker
+
+Bulkhead
+
+Retry strategy
+
+Exponential backoff
+
+Idempotent consumers
+
+7. Messaging Systems
+
+Kafka architecture
+
+Partitioning
+
+Consumer groups
+
+Replay
+
+Ordering guarantees
+
+Dead letter queues
+
+SQS vs SNS
+
+MQTT (for IoT)
+
+Exactly-once vs at-least-once
+
+Phase 4 – Caching & Performance
+
+Cache-aside
+
+Write-through
+
+Write-back
+
+Redis clustering
+
+TTL tuning
+
+Cache stampede
+
+Thundering herd
+
+CDN strategy
+
+In-memory caching
+
+Read replicas
+
+Phase 5 – AWS Complete Coverage
+
+This section must be mastered deeply.
+
+8. AWS Core
+IAM
+
+Roles
+
+Policies
+
+Trust relationships
+
+Least privilege
+
+Resource-based vs identity-based policies
+
+VPC
+
+Subnets
+
+Route tables
+
+Internet Gateway
+
+NAT Gateway
+
+Security groups
+
+NACL
+
+VPC peering
+
+PrivateLink
+
+Compute
+
+EC2
+
+Auto Scaling Groups
+
+ECS
+
+EKS
+
+Lambda
+
+Fargate
+
+Understand:
+
+When to use each
+
+Cold start tradeoffs
+
+Cost comparison
+
+Storage
+
+S3 (Lifecycle policies, versioning)
+
+EBS
+
+EFS
+
+Glacier
+
+Data transfer costs
+
+Databases
+
+RDS
+
+Aurora
+
+DynamoDB
+
+Elasticache
+
+Redshift
+
+Understand:
+
+Provisioned vs on-demand
+
+Throughput capacity
+
+Scaling strategy
+
+Backup & recovery
+
+Messaging
+
+SQS
+
+SNS
+
+EventBridge
+
+Kinesis
+
+IoT Core
+
+Monitoring
+
+CloudWatch
+
+CloudTrail
+
+X-Ray
+
+Alarms
+
+Log retention policies
+
+Security
+
+WAF
+
+Shield
+
+KMS
+
+Secrets Manager
+
+Cognito
+
+Phase 6 – DevOps & Infrastructure
+9. Docker
+
+Multi-stage builds
+
+Image optimization
+
+Distroless images
+
+Volumes
+
+Health checks
+
+Networking
+
+Docker Compose
+
+10. Kubernetes
+
+Pods
+
+Services
+
+Ingress
+
+ConfigMaps
+
+Secrets
+
+Deployments
+
+HPA
+
+Rolling updates
+
+Blue/Green
+
+Canary
+
+11. Infrastructure as Code
+
+Terraform
+
+Remote state
+
+Modules
+
+State locking
+
+Drift detection
+
+Phase 7 – Reliability Engineering
+
+SLO
+
+SLA
+
+SLIs
+
+Error budgets
+
+Chaos testing
+
+Failure injection
+
+Graceful degradation
+
+Disaster recovery
+
+Multi-region architecture
+
+RTO / RPO
+
+Phase 8 – Cost Engineering (Critical for Senior Level)
+
+EC2 reserved vs spot
+
+Data transfer pricing
+
+Cross-region cost
+
+NAT Gateway cost
+
+S3 lifecycle optimization
+
+DynamoDB billing
+
+Lambda pricing math
+
+Cost allocation tagging
+
+AWS Budgets
+
+You must be able to estimate:
+
+Monthly cost of your architecture.
+
+Phase 9 – Security Engineering
+
+OWASP Top 10
+
+SQL injection
+
+XSS
+
+CSRF
+
+SSRF
+
+JWT attacks
+
+API abuse
+
+Rate limiting
+
+Encryption at rest
+
+Encryption in transit
+
+Secrets rotation
+
+Phase 10 – Soft Skills & Documentation
+
+Writing HLD document
+
+Writing LLD
+
+Sequence diagrams
+
+Data flow diagrams
+
+Risk analysis
+
+Assumption documentation
+
+Scalability forecast
+
+Trade-off analysis
+
+Bonus Topics (Small but Important)
+
+Cron job reliability
+
+Time zone handling
+
+Id generation (UUID vs Snowflake)
+
+File upload strategy
+
+Email delivery system design
+
+PDF generation at scale
+
+Webhook reliability
+
+Feature flags
+
+A/B testing
+
+Backward compatibility
+
+Graceful shutdown handling

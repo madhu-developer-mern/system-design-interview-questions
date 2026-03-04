@@ -1,0 +1,575 @@
+. Node.js Basics
+
+What is Node.js and how is it different from traditional server-side technologies?
+
+What is the role of the V8 engine in Node.js?
+
+Why is Node.js considered non-blocking?
+
+What is event-driven architecture in Node.js?
+
+What are the main advantages of using Node.js?
+
+What are the limitations of Node.js?
+
+What is the difference between synchronous and asynchronous code in Node.js?
+
+What are Node.js global objects?
+
+What is the process object in Node.js?
+
+What is the purpose of __dirname and __filename?
+
+2. Node.js Runtime & Event Loop
+
+What is the Node.js Event Loop?
+
+What are the phases of the event loop?
+
+What happens internally when a Node.js application starts?
+
+How does Node.js handle multiple concurrent requests?
+
+Explain the difference between microtasks and macrotasks in Node.js.
+
+What is the difference between setImmediate() and setTimeout()?
+
+What is the difference between process.nextTick() and setImmediate()?
+
+What happens if the event loop is blocked?
+
+How can you detect event loop blocking?
+
+How does Node.js achieve concurrency with a single thread?
+
+3. Node.js Modules
+
+What is the Node.js module system?
+
+What is the difference between CommonJS and ES Modules?
+
+What is require() and how does it work internally?
+
+How does module caching work?
+
+What is the difference between module.exports and exports?
+
+What happens if two modules require each other?
+
+How do you create your own module in Node.js?
+
+How do you share variables between modules?
+
+What is dynamic importing in Node.js?
+
+How do you resolve module paths?
+
+4. Asynchronous Programming
+
+What are callbacks in Node.js?
+
+What is callback hell?
+
+How do you avoid callback hell?
+
+What are Promises?
+
+What is the difference between Promise chaining and async/await?
+
+What happens when a promise is rejected and not handled?
+
+What are unhandled promise rejections?
+
+What is Promise.all()?
+
+What is Promise.race()?
+
+What is the difference between sequential and parallel async execution?
+
+5. Node.js Core Modules
+
+What are core modules in Node.js?
+
+Explain the fs module.
+
+What is the difference between fs.readFile and fs.createReadStream?
+
+What is the path module used for?
+
+What is the http module in Node.js?
+
+How does Node.js create an HTTP server?
+
+What is the events module?
+
+What is the EventEmitter pattern?
+
+What is the buffer module?
+
+What is the crypto module used for?
+
+6. Streams and Buffers
+
+What are streams in Node.js?
+
+What are the four types of streams?
+
+What is the difference between streams and buffers?
+
+What is backpressure in streams?
+
+How do streams improve performance?
+
+What is pipe() in streams?
+
+How does Node.js handle large file processing?
+
+What is a readable stream?
+
+What is a writable stream?
+
+What is a transform stream?
+
+7. Error Handling
+
+What are the different ways to handle errors in Node.js?
+
+What is the difference between operational and programmer errors?
+
+How do you handle errors in async/await?
+
+What is the uncaughtException event?
+
+What is the unhandledRejection event?
+
+Why is it dangerous to continue running after an uncaught exception?
+
+How do you design centralized error handling?
+
+What are best practices for logging errors?
+
+How do you create custom error classes?
+
+How do you handle errors in streams?
+
+8. Performance Optimization
+
+What causes event loop blocking?
+
+How do you identify performance bottlenecks?
+
+What is the libuv thread pool?
+
+How do you increase thread pool size?
+
+What are Worker Threads?
+
+What is the cluster module?
+
+When should you use Worker Threads vs cluster?
+
+How do you profile Node.js applications?
+
+What tools are used to monitor Node.js performance?
+
+How do you optimize memory usage?
+
+9. Node.js Internals
+
+What is libuv and why is it important?
+
+How does Node.js interact with the operating system?
+
+What happens internally when you call fs.readFile()?
+
+How does Node.js handle network sockets?
+
+What is the role of the thread pool in Node.js?
+
+What are microtasks in Node.js?
+
+How does Node.js garbage collection work?
+
+What are memory leaks in Node.js?
+
+How do you debug memory leaks?
+
+What are hidden classes in the V8 engine?
+
+10. Concurrency and Scaling
+
+How does Node.js scale across multiple CPU cores?
+
+What is the cluster module used for?
+
+How do Worker Threads work?
+
+What are the limitations of Node.js for multi-core processing?
+
+How do you implement inter-process communication?
+
+What is shared memory in Worker Threads?
+
+What is load balancing in Node.js?
+
+What is the difference between process and thread?
+
+How does Node.js handle thousands of connections?
+
+What are the trade-offs of scaling Node.js applications?
+
+11. Node.js Security
+
+What are common Node.js security risks?
+
+How do you prevent prototype pollution?
+
+What is the risk of using eval()?
+
+What is the helmet middleware used for?
+
+How do you prevent denial-of-service attacks?
+
+What is rate limiting?
+
+What are environment variable security best practices?
+
+What are dependency vulnerabilities?
+
+What is the purpose of npm audit?
+
+How do you secure Node.js applications in production?
+
+12. Advanced Node.js Concepts
+
+What are Async Hooks?
+
+What is the purpose of async_hooks module?
+
+What are Node.js native addons?
+
+What is N-API?
+
+How does Node.js support WebAssembly?
+
+What is the difference between event-driven and reactive systems?
+
+What is event sourcing?
+
+What is the pub/sub pattern?
+
+How do you implement message queues in Node.js?
+
+What is backpressure management in distributed systems?
+
+13. Debugging and Production Issues
+
+How do you debug Node.js applications?
+
+What is the Node.js inspector?
+
+How do you generate heap snapshots?
+
+What is CPU profiling?
+
+How do you trace asynchronous calls?
+
+What tools are used for Node.js monitoring?
+
+How do you detect memory leaks in production?
+
+How do you investigate high CPU usage?
+
+What causes event loop delays?
+
+How do you analyze slow Node.js applications?
+
+14. Coding & Debugging Exercises
+
+Write a Node.js HTTP server without using any framework.
+
+Implement a custom EventEmitter.
+
+Write a script to read a large file using streams.
+
+Implement a promise-based delay function.
+
+Write a program to detect event loop blocking.
+
+Implement a task queue with concurrency limits.
+
+Write a worker thread example.
+
+Implement a custom middleware system.
+
+Build a simple module loader.
+
+Implement a retry mechanism with exponential backoff.
+
+15. Expert-Level Architecture Questions
+
+Design a Node.js system capable of handling 1 million concurrent connections.
+
+How would you design a high-performance logging system in Node.js?
+
+How would you build a real-time streaming system using Node.js?
+
+How would you build a distributed task processing system?
+
+How would you design a Node.js service with zero downtime deployments?
+
+How would you design a high-performance message processing system?
+
+How would you handle graceful shutdown in Node.js services?
+
+How do you design fault-tolerant Node.js services?
+
+How would you design a Node.js service for real-time analytics?
+
+
+
+
+How would you design high-availability Node.js microservices?
+
+
+A) Real-time fundamentals (Sockets, long-lived connections)
+
+Explain how Node.js handles 50k–500k concurrent TCP connections.
+
+Compare WebSocket vs Server-Sent Events vs long polling. When would you choose each?
+
+What happens at the TCP level when a WebSocket connection is established (upgrade flow)?
+
+How do you implement heartbeats/pings, and what failure modes do they cover?
+
+What is a “half-open” connection and how do you detect/handle it?
+
+How do you implement connection timeouts correctly for real-time systems?
+
+What is backpressure in a real-time system and how do you enforce it?
+
+How do you prevent slow clients from exhausting server resources?
+
+How do you handle mobile clients switching networks (Wi-Fi → 4G) mid-session?
+
+How do you handle client reconnection and session resumption?
+
+B) Ordering, delivery guarantees, and correctness
+
+Define at-most-once, at-least-once, and exactly-once delivery in real-time messaging.
+
+How do you achieve idempotency for real-time message handlers?
+
+How do you guarantee message ordering per user/room/partition?
+
+What are sequence numbers/offsets and how would you use them for replay?
+
+How do you design deduplication for retrying producers and consumers?
+
+How do you handle out-of-order events from multiple sources?
+
+How do you handle clock skew in event timestamps?
+
+What is “eventual consistency” in real-time state propagation?
+
+When would you use CRDTs in a real-time product?
+
+How do you validate “state correctness” under packet loss and reconnects?
+
+C) Real-time state management (Presence, rooms, fanout)
+
+How do you design presence (online/offline/last-seen) accurately at scale?
+
+How do you avoid “ghost online” presence due to missed disconnect events?
+
+How do you model rooms/channels and membership for fast fanout?
+
+What data structure and storage would you use for room membership?
+
+How do you implement “typing indicators” without flooding the system?
+
+How do you implement read receipts efficiently?
+
+How do you implement push-to-all in a large room (10k users) without meltdown?
+
+What is the fanout strategy: fanout-on-write vs fanout-on-read?
+
+How do you handle per-client filtering (muted users, blocked content) at fanout time?
+
+How do you apply per-connection rate limits without hurting latency?
+
+D) Performance, latency, and event loop pressure
+
+What are the primary sources of latency in Node.js real-time servers?
+
+How do you measure event loop lag in production?
+
+How do you decide when to move work to Worker Threads?
+
+What problems occur if you do JSON.stringify on large payloads per message?
+
+How do you reduce GC pressure in high-throughput messaging?
+
+What is the impact of allocating new objects per message? How do you mitigate it?
+
+How do you tune Node.js for low-latency (GC, heap, flags) and what are the risks?
+
+What is the libuv thread pool, and how can it become a bottleneck in real-time apps?
+
+How do you handle CPU spikes without dropping connections?
+
+What is your strategy for controlling payload size and compression trade-offs?
+
+E) Scalability patterns (multi-instance, sharding, brokers)
+
+How do you scale WebSockets horizontally across many Node instances?
+
+Explain sticky sessions: when are they required and when can you avoid them?
+
+What are the downsides of sticky sessions (cost, resilience, uneven load)?
+
+How do you broadcast messages across instances reliably?
+
+How would you shard by userId/roomId to distribute load?
+
+How do you implement cross-node pub/sub with minimal latency?
+
+How do you design for 1M concurrent connections across regions?
+
+How do you route messages to the right node holding a user’s connection?
+
+What happens when a node dies—how do you reroute and recover state?
+
+How do you prevent “thundering herd” on reconnect after an outage?
+
+F) Reliability and failure handling
+
+What does graceful shutdown mean for long-lived connections?
+
+How do you drain connections without message loss?
+
+How do you implement message buffering during deploys?
+
+How do you handle partial failures (broker slow, DB slow, one region degraded)?
+
+What is circuit breaking in a real-time system?
+
+How do you do retry with backoff without amplifying load?
+
+How do you ensure the system degrades gracefully under load?
+
+How do you handle backpressure end-to-end (client ↔ server ↔ broker ↔ consumer)?
+
+What is a poison message in real-time processing? How do you handle it?
+
+What telemetry do you need to detect and prevent silent message loss?
+
+G) Security for real-time connections
+
+How do you authenticate a WebSocket connection securely (handshake, tokens)?
+
+How do you rotate tokens for long-lived connections without disconnecting everyone?
+
+How do you authorize per-room subscriptions securely?
+
+How do you prevent socket hijacking and replay attacks?
+
+How do you protect from connection floods (L7) and slowloris-style attacks?
+
+What are safe limits for message rate, payload size, and connection count?
+
+How do you validate incoming messages to prevent DoS via parsing?
+
+How do you secure multi-tenant real-time systems (tenant isolation)?
+
+How do you handle secrets and key material on Node servers?
+
+What is the threat model for real-time chat/presence systems?
+
+H) Data flow integration (real-time + storage)
+
+How do you persist messages/events without hurting real-time latency?
+
+What’s your approach for “write path fast, read path consistent”?
+
+How do you reconcile in-memory state vs persisted state after restart?
+
+How do you handle replay of missed events after reconnect?
+
+How do you implement exactly-once “effects” in practice (if required)?
+
+How do you design an outbox/inbox pattern for real-time events?
+
+How do you handle schema evolution of events over time?
+
+How do you version message formats without breaking old clients?
+
+What is compaction/snapshotting for real-time state?
+
+How do you design retention and TTL for real-time event stores?
+
+I) Observability and debugging (real systems)
+
+What metrics are mandatory for real-time Node services?
+
+How do you trace a single message end-to-end across services?
+
+How do you debug intermittent disconnects in production?
+
+How do you detect memory leaks specifically in socket-based apps?
+
+What does a typical heap leak look like in a real-time server and why?
+
+How do you analyze CPU profiles for high message throughput?
+
+How do you detect head-of-line blocking at the app layer?
+
+How do you identify if the bottleneck is network, event loop, GC, or upstream?
+
+What logs are useful vs dangerous (cost/volume) in real-time systems?
+
+How do you run chaos testing for real-time services?
+
+J) Coding & debugging exercises (real-time oriented)
+
+Write a WebSocket server that supports rooms and broadcasts to a room.
+
+Implement per-connection rate limiting and global rate limiting.
+
+Implement a message queue per user to guarantee ordering.
+
+Implement backpressure: drop, throttle, or buffer—choose one and justify.
+
+Implement reconnect logic with resume-from-offset semantics.
+
+Implement heartbeat + disconnect detection robustly.
+
+Implement a concurrency-limited async processor for incoming messages.
+
+Implement a “graceful shutdown” handler that drains active sockets.
+
+Debug a memory leak caused by storing socket references in a Map that never clears.
+
+Debug an event loop stall caused by synchronous JSON parsing of large payloads.
+
+K) System design scenarios (real-time heavy)
+
+Design “typing indicator + presence + read receipts” for 10M users.
+
+Design a real-time IoT alerting system (bursty traffic, no data loss, low latency).
+
+Design a live dashboard that updates every second for 100k viewers.
+
+Design a multiplayer game state sync (tick rate, reconciliation, cheating prevention).
+
+Design a market data streaming service (ordering, low latency, replay).
+
+Design a distributed notification fanout service (per-user rules, filtering).
+
+Design a voice/video signaling server (not media) with Node.js.
+
+Design a real-time collaboration editor (OT/CRDT, conflict resolution).
+
+Design cross-region active-active real-time messaging (latency vs consistency).
+
+Design a rolling deploy strategy for WebSockets with zero message loss.
